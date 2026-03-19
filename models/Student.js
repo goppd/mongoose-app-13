@@ -1,14 +1,16 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose'
 
 const studentSchema = new mongoose.Schema({
   name: String,
   email: String,
-  courses: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Course',
-  }],
-});
-  }
-const Student = mongoose.model('Student', studentSchema);
+  courses: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Course',
+    },
+  ],
+})
 
-export default Student;
+const Student = mongoose.model('Student', studentSchema)
+
+export default Student
